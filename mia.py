@@ -18,7 +18,8 @@ std = [0.2886, 0.2875, 0.2889]
 model = resnet18(pretrained=False)
 model.fc = torch.nn.Linear(512, 44)
 
-transform = transforms.Compose([ # ?
+transform = transforms.Compose([
+    transforms.ToTensor(),
     transforms.Normalize(mean, std)
 ])
 
