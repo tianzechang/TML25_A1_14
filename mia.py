@@ -36,7 +36,7 @@ class TaskDataset(Dataset):
         self.labels = []
         self.transform = transform
 
-    def __getitem__(self, index): # ?
+    def __getitem__(self, index): 
         id_ = self.ids[index]
         img = self.imgs[index]
         if not self.transform is None:
@@ -52,7 +52,7 @@ class MembershipDataset(TaskDataset):
         super().__init__(transform)
         self.membership = []
 
-    def __getitem__(self, index): # ?
+    def __getitem__(self, index): 
         id_, img, label = super().__getitem__(index)
         return id_, img, label, self.membership[index]
 
